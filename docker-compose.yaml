@@ -1,0 +1,14 @@
+version: '3'
+
+services:
+  kafka:
+    image: spotify/kafka
+    container_name: kafka
+    ports: [2181, 9092]
+  serca:
+    build: https://github.com/sercal/serca.git
+    container_name: serca
+    expose: ["5000"]
+  serca-mat:
+    build: https://github.com/sercal/serca-mat.git
+    container_name: serca_mat
